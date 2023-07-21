@@ -54,7 +54,6 @@ public class admin extends javax.swing.JFrame {
         nmKopi = new javax.swing.JTextField();
         hrgKopi = new javax.swing.JTextField();
         jnsKopi = new javax.swing.JComboBox<>();
-        stcKopi = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         catatan = new javax.swing.JTextArea();
         btnSimpan = new javax.swing.JButton();
@@ -63,12 +62,17 @@ public class admin extends javax.swing.JFrame {
         btnHapus = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableKopi = new javax.swing.JTable();
+        stcKopi = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(166, 225, 196));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Hallo Admin, ini data stock Kopi yang ada");
 
+        btnLogout.setBackground(new java.awt.Color(255, 0, 0));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,12 +98,15 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
-        jnsKopi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kopi Hitam", "Kopi Putih" }));
+        jnsKopi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arabika", "Robusta", "Jamaika" }));
 
         catatan.setColumns(20);
         catatan.setRows(5);
         jScrollPane1.setViewportView(catatan);
 
+        btnSimpan.setBackground(new java.awt.Color(102, 255, 102));
+        btnSimpan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSimpan.setForeground(new java.awt.Color(255, 255, 255));
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +114,9 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(153, 255, 153));
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +124,9 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        btnReset.setBackground(new java.awt.Color(255, 102, 102));
+        btnReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(255, 255, 255));
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +134,9 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
+        btnHapus.setBackground(new java.awt.Color(255, 51, 51));
+        btnHapus.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHapus.setForeground(new java.awt.Color(255, 255, 255));
         btnHapus.setText("Delete");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +162,8 @@ public class admin extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableKopi);
 
+        stcKopi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Available", "Not Available" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,43 +172,44 @@ public class admin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(18, 18, 18)
-                            .addComponent(jnsKopi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(hrgKopi))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(nmKopi))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(18, 18, 18)
-                            .addComponent(kdKopi))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane1)
-                                .addComponent(stcKopi)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnReset)
-                                        .addComponent(btnSimpan))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnUpdate)
-                                        .addComponent(btnHapus)
-                                        .addComponent(btnLogout)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jnsKopi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(hrgKopi))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nmKopi))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(kdKopi))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnReset)
+                                            .addComponent(btnSimpan))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnUpdate)
+                                            .addComponent(btnHapus)
+                                            .addComponent(btnLogout)))
+                                    .addComponent(stcKopi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,7 +283,7 @@ public class admin extends javax.swing.JFrame {
             +nmKopi.getText() + "','"
             +hrgKopi.getText() + "','"
             +jnsKopi.getSelectedItem() + "','"
-            +stcKopi.getText() + "','"
+            +stcKopi.getSelectedItem() + "','"
             +catatan.getText() + "')");
             
         tampilData("");
@@ -273,7 +292,7 @@ public class admin extends javax.swing.JFrame {
         nmKopi.setText("");
         hrgKopi.setText("");
         jnsKopi.setSelectedItem("");
-        stcKopi.setText("");
+        stcKopi.setSelectedItem("");
         catatan.setText("");
         } catch (Exception e){
             e.printStackTrace();
@@ -286,7 +305,7 @@ public class admin extends javax.swing.JFrame {
         nmKopi.setText(tableKopi.getValueAt(tableKopi.getSelectedRow(), 1).toString());
         hrgKopi.setText(tableKopi.getValueAt(tableKopi.getSelectedRow(), 2).toString());
         jnsKopi.setSelectedItem(tableKopi.getValueAt(tableKopi.getSelectedRow(), 3).toString());
-        stcKopi.setText(tableKopi.getValueAt(tableKopi.getSelectedRow(), 4).toString());
+        stcKopi.setSelectedItem(tableKopi.getValueAt(tableKopi.getSelectedRow(), 4).toString());
         catatan.setText(tableKopi.getValueAt(tableKopi.getSelectedRow(), 5).toString());
         btnSimpan.setEnabled(false);
         btnUpdate.setEnabled(true);
@@ -302,7 +321,7 @@ public class admin extends javax.swing.JFrame {
                     + "namakopi='"  + nmKopi.getText() + "',"
                     + "hargakopi='" + hrgKopi.getText() + "',"
                     + "jeniskopi='" + jnsKopi.getSelectedItem() + "',"
-                    + "stock='"     + stcKopi.getText() + "',"
+                    + "stock='"     + stcKopi.getSelectedItem() + "',"
                     + "catatan='"   + catatan.getText() + "' WHERE "+ "kdbarang='" + kdKopi.getText() + "'"
             );
             tampilData("");
@@ -391,7 +410,7 @@ public class admin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jnsKopi;
     private javax.swing.JTextField kdKopi;
     private javax.swing.JTextField nmKopi;
-    private javax.swing.JTextField stcKopi;
+    private javax.swing.JComboBox<String> stcKopi;
     private javax.swing.JTable tableKopi;
     // End of variables declaration//GEN-END:variables
 
@@ -431,7 +450,7 @@ public void reset(){
     nmKopi.setText("");
     hrgKopi.setText("");
     jnsKopi.setSelectedItem("");
-    stcKopi.setText("");
+    stcKopi.setSelectedItem("");
     catatan.setText("");
     btnSimpan.setEnabled(true);
     kdKopi.setEnabled(true);
